@@ -1,5 +1,40 @@
+Изменения проделаны везде, дамп приложен.
+
 Я сделала привязку по типу файлов в таблице media_types_id через команду:
-
 UPDATE media SET filename = concat(filename, '.mp3') WHERE media_type_id = 3;
-
 и так аналогично со всеми типами.
+
+Реализация лайков.
+
+Допускаю, что в нашем случае лайки идут только на медиафайлы.
+Тогда полагаю, что это должно выглядеть примерно так:
+
+CREATE TABLE likes (
+  media_id INT UNSIGNED NOT NULL,
+  user_id INT UNSIGED NOT NULL,
+  like BOOLEAN);
+Остается только внедрить счетчик, посчитав количество пользователей, поставивших лайк и добавить автообновление.
+
+Сервис для курсовой работы.
+Мне тут по работе нужна база данных для аудита рекламных акций конкретных компаний, поэтому я беру за основу сервис Едадил.
+
+База будет содержать информацию по скидкам товаров по следующим параметрам:
+category,
+city,
+channel,
+customer,
+company,
+type,
+brand,
+subbrand,
+segment,
+count per pack,
+promo price,
+regular price,
+discount,
+extra parametrs of promo,
+start date,
+end date,
+duration,
+catalog_id,
+page.

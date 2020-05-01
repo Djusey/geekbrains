@@ -1,0 +1,5 @@
+Я сделала привязку по типу файлов в таблице media_types_id через команду:
+
+UPDATE media SET filename = concat(filename, '.mp3') WHERE media_type_id = 3;
+
+и так аналогично со всеми типами.
